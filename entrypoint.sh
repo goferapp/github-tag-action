@@ -2,9 +2,10 @@
 
 # config
 default_semvar_bump=${DEFAULT_BUMP:-minor}
-with_v=${WITH_V:-false}
+with_v=${WITH_V:-true}
 release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
+postfix=${POSTFIX:-dev}
 
 pre_release="true"
 IFS=',' read -ra branch <<< "$release_branches"
