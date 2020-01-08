@@ -6,7 +6,7 @@ with_v=${WITH_V:-true}
 release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
 prefix=${PREFIX}
-
+echo $prefix
 pre_release="true"
 IFS=',' read -ra branch <<< "$release_branches"
 for b in "${branch[@]}"; do
@@ -52,7 +52,6 @@ case "$log" in
     * ) new=$(semver bump `echo $default_semvar_bump` $tag);;
 esac
 
-# prefix with 'v'
 if $prefix
 then
     new="$prefix$new"
