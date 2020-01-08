@@ -53,9 +53,9 @@ case "$log" in
 esac
 
 # prefix with 'v'
-if $with_v
+if $prefix
 then
-    new="v$new"
+    new="$prefix$new"
 fi
 
 if $pre_release
