@@ -6,6 +6,7 @@ with_v=${WITH_V:-true}
 release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
 prefix=${PREFIX}
+
 echo $prefix
 pre_release="true"
 IFS=',' read -ra branch <<< "$release_branches"
