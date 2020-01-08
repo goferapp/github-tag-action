@@ -52,10 +52,7 @@ case "$log" in
     * ) new=$(semver bump `echo $default_semvar_bump` $tag);;
 esac
 
-if $prefix
-then
-    new="$prefix$new"
-fi
+new="$prefix$new"
 
 if $pre_release
 then
