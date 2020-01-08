@@ -42,6 +42,7 @@ then
     tag=0.0.0
 else
     log=$(git log $tag..HEAD --pretty=oneline)
+    tag="${tag:1}"
 fi
 
 # get commit logs and determine home to bump the version
