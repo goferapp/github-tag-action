@@ -9,8 +9,14 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Bump version and push tag
+      id: bump
       uses: goferapp/github-tag-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PREFIX: v
         RELEASE_BRANCHES: master
+    - name: Echo
+      run: |
+        echo $newTag
+      env: 
+        newTag: steps.bump.outputs.new_tag
