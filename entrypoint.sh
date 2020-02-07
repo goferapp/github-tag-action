@@ -27,7 +27,8 @@ tag_commit=$(git rev-list -n 1 $tag)
 echo $tag
 # get current commit hash for tag
 commit=$(git rev-parse HEAD)
-
+echo "tag_commit= $tag_commit"
+echo "commit= $commit"
 if [ "$tag_commit" == "$commit" ]; then
     echo "No new commits since previous tag. Skipping..."
     echo ::set-output name=tag::$tag
