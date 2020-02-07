@@ -22,7 +22,7 @@ echo "pre_release = $pre_release"
 git fetch --tags
 
 # get latest tag
-tag=$(git describe --tags --match "$prefix[0-9]*" `git rev-list --tags --max-count=1`)
+tag=$(git describe --tags --match "$prefix[0-9]*" --abbrev=0)
 tag_commit=$(git rev-list -n 1 $tag)
 echo $tag
 # get current commit hash for tag
